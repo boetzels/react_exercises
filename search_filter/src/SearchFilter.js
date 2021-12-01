@@ -14,16 +14,16 @@ function SearchFilter() {
     'Mango',
   ];
 
-  const [filterFruits, setFilterFruits] = useState(fruits.map((fruit,i) => <div key={ i } >{ fruit }</div> ));
+  const [filterFruits, setFilterFruits] = useState(fruits);
 
   const handleChange = (e) => {
     const searchValue = e.target.value;
 
-    const searchedFruits = (searchValue) ? fruits.filter((fruit) => fruit.indexOf(searchValue) > -1 ) : fruits;
+    const searchedFruits = fruits.filter((fruit) => fruit.indexOf(searchValue) !== -1 );
 
     //console.log('searchedFruits',searchedFruits);
 
-    setFilterFruits([searchedFruits.map((fruit,i) => <div key={ i } >{ fruit }</div> )]);
+    setFilterFruits(searchedFruits);
   };
 
   return (
@@ -32,7 +32,7 @@ function SearchFilter() {
         <p>
           Search: <input onChange={(e) => handleChange(e)} />
         </p>
-          { filterFruits }
+          { filterFruits && filterFruits.map((fruit,i) => <div key={ i } >{ fruit }</div> ) }
       </header>
       <p>
         
