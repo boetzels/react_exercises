@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from "react";
 
-function App() {
+function SearchFilter() {
   const fruits = [
     'Banana',
     'Apple',
@@ -14,7 +14,7 @@ function App() {
     'Mango',
   ];
 
-  const [filterFruits, setFilterFruits] = useState(fruits);
+  const [filterFruits, setFilterFruits] = useState(fruits.map((fruit,i) => <div key={ i } >{ fruit }</div> ));
 
   const handleChange = (e) => {
     const searchValue = e.target.value;
@@ -23,23 +23,23 @@ function App() {
 
     //console.log('searchedFruits',searchedFruits);
 
-    setFilterFruits([searchedFruits]);
+    setFilterFruits([searchedFruits.map((fruit,i) => <div key={ i } >{ fruit }</div> )]);
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Search: <input onChange={(e) => handleChange(e)} />
         </p>
-          { filterFruits && filterFruits.map((fruit,i) => <div key={ i } >{ fruit }</div> )}
+          { filterFruits }
       </header>
       <p>
         
       </p>
     </div>
   );
+
 }
 
-export default App;
+export default SearchFilter;
