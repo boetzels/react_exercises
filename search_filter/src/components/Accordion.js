@@ -1,4 +1,4 @@
-import '../App.css';
+import '../css/Accordion.css';
 import Chevron from './Chevron';
 import { useState, useRef } from "react";
 
