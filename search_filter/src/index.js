@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Accordion from './components/Accordion';
+import './css/ImageSlider.css';
+import ImageSlider from './components/ImageSlider/ImageSlider';
 import reportWebVitals from './reportWebVitals';
 
 function App(props) {
@@ -20,11 +21,11 @@ function App(props) {
 
   for (let x = 0; x < nbr; x++) {
     list.push(
-      <Accordion i={ x } title={ titles[x] } content={ contents[x] } />
+      
     )
   }
   
-  return(list);
+  return(<ImageSlider />);
 }
 
 ReactDOM.render(

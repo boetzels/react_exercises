@@ -1,45 +1,67 @@
-.AccordionSection .chevron {
-    margin-left: auto;
-    transition: transform 0.6s ease;
-  }
+
+
+.rotate{
+  transform: rotate(90deg);
+}
+
+.AccordionSection span p{
+  font-size: calc(10px + 1vmin);
+  padding: 5vh 20vh;
+}
+
+.AccordionSection span {
+  overflow: hidden;
+  background-color: #ccc;
+  transition: max-height 1s ease-out;
   
-  .rotate{
-    transform: rotate(90deg);
-  }
-  
-  .AccordionSection span p{
-    font-size: calc(10px + 1vmin);
-    padding: 5vh 20vh;
-  }
-  
-  .AccordionSection span {
-    overflow: hidden;
-    background-color: #ccc;
-    transition: max-height 1s ease-out;
-    
-    /*max-height: 0px;*/
-  }
-  
-  .AccordionSection header:hover,
-  .AccordionSection header.active{
-    background-color: #777;
-  }
-  
-  .AccordionSection header {
-    cursor: pointer;
-    background-color: #999;
-    min-height: 20vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    padding: 0 20vh;
-  }
-  
-  .AccordionSection {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1px;
-  }
+  /*max-height: 0px;*/
+}
+
+.AccordionSection header:hover,
+.AccordionSection header.active{
+  background-color: #777;
+}
+
+.AccordionSection header {
+  cursor: pointer;
+  background-color: #999;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 0 20vh;
+}
+
+.imageSlider {
+  margin: 5vh auto;
+  width:800px;
+  height:500px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px 0 black;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.slide img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.chevron {
+  background-color: #fff;
+  border: none;
+  position:absolute;
+  display: flex;
+  transition: transform 0.6s ease;
+  border-radius: 20px;
+}
